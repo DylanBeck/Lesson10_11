@@ -103,7 +103,11 @@ public class SearchApp extends javax.swing.JFrame {
         txtresult.setText("Student not found");
     else
         txtresult.setText (s[location].toStringg());
-    }                                         
+    }  
+        private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {                                         
+     txtid.setText("");
+     txtresult.setText("");
+    }                                  
 
     public static int search (Object[] a, Object searchValue){
 	   int left = 0;
