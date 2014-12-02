@@ -1,32 +1,33 @@
-
-public class ISSStudent implements Comparable {
+public class ISSStudent implements Comparable{
     private String name;
     private String address;
     private int id;
     
-    public ISSStudent(String n, String a, int id){
-        name = n;
-        address =a;
-        id=id;
+    public ISSStudent(String n, String a, int i)
+    {
+        name=n;
+        address=a;
+        id=i;
+    }
+  
+    public int getId()
+    {
+        return id;
     }
     
-    public int getID()
+    public String toString()
     {
-        return id; 
-    }
-
-    public String toString(){
-        String str = "Name\t" + name;
-        str+="\nAddres:\t"+address;
-        str+="\nID Number:\t"+id;
+        String str="Name:\t" + name;    
+        str+="\nAddress:\t" + address;
+        str+="\nID Number:\t" + id;
         return str;
     }
-    @Override
+    
     public int compareTo(Object o) {
-        int difference = id - ((ISSStudent).o).getID();
+        int difference=id - ((ISSStudent)o).getId();
         return difference;
     }
     
 }
 
-}
+
