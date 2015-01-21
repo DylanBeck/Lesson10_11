@@ -25,6 +25,7 @@ public class Sorting extends javax.swing.JFrame {
         btnselectiopn = new javax.swing.JButton();
         btninsertion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnquick = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,6 +62,13 @@ public class Sorting extends javax.swing.JFrame {
 
         jLabel1.setText("Sorting Methods");
 
+        btnquick.setText("Quick Sort");
+        btnquick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnquickActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -71,13 +79,14 @@ public class Sorting extends javax.swing.JFrame {
                     .addComponent(btngenerate, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(btninsertion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnselectiopn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnbubble, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                        .addComponent(btnbubble, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnquick))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,6 +105,8 @@ public class Sorting extends javax.swing.JFrame {
                 .addComponent(btnselectiopn)
                 .addGap(16, 16, 16)
                 .addComponent(btninsertion)
+                .addGap(40, 40, 40)
+                .addComponent(btnquick)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -112,9 +123,9 @@ public class Sorting extends javax.swing.JFrame {
 
     private void btnbubbleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbubbleActionPerformed
     model.clear();
-     long stime = System.currentTimeMillis();
+     double stime = System.currentTimeMillis();
     bubbleSort(nums);
-    long etime = System.currentTimeMillis() - stime;
+    double etime = System.currentTimeMillis()- stime;
     JOptionPane.showMessageDialog(this, etime/1000);
     //rebuildList
     for(int x=0;x<nums.length;x++)
@@ -123,9 +134,9 @@ public class Sorting extends javax.swing.JFrame {
 
     private void btnselectiopnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnselectiopnActionPerformed
      model.clear();
-     long stime = System.currentTimeMillis();
+     double stime = System.currentTimeMillis();
     selectionSort(nums);
-    long etime = System.currentTimeMillis() - stime;
+    double etime = System.currentTimeMillis() - stime;
     JOptionPane.showMessageDialog(this, etime/1000);
     //rebuildList
     for(int x=0;x<nums.length;x++)
@@ -134,14 +145,18 @@ public class Sorting extends javax.swing.JFrame {
 
     private void btninsertionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertionActionPerformed
      model.clear();
-     long stime = System.currentTimeMillis();
+     double stime = System.currentTimeMillis();
     insertionSort(nums);
-    long etime = System.currentTimeMillis() - stime;
+    double etime = System.currentTimeMillis() - stime;
     JOptionPane.showMessageDialog(this, etime/1000);
     //rebuildList
     for(int x=0;x<nums.length;x++)
         model.addElement(nums[x]);
     }//GEN-LAST:event_btninsertionActionPerformed
+
+    private void btnquickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnquickActionPerformed
+    
+    }//GEN-LAST:event_btnquickActionPerformed
     public static void bubbleSort(int[] a) {
         int k = 0;
         boolean exchangeMade = true;
@@ -250,6 +265,7 @@ public static void insertionSort(int a[]){
     private javax.swing.JButton btnbubble;
     private javax.swing.JButton btngenerate;
     private javax.swing.JButton btninsertion;
+    private javax.swing.JButton btnquick;
     private javax.swing.JButton btnselectiopn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
